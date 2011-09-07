@@ -118,22 +118,6 @@ module Sokoban
     def clear_screen
       RUBY_PLATFORM =~ /mswin|mingw/ ? system('cls') : system('clear')
     end
-
-    def getch
-      if RUBY_PLATFORM =~ /mswin|mingw/
-        require 'Win32API'
-        @getch ||= Win32API.new('crtdll', '_getch', [], 'L')
-        @getch.call
-      else
-        state = `stty -g`
-        begin
-          `stty raw -echo cbreak`
-          $stdin.getc
-        ensure
-          `stty #{state}`
-        end
-      end
-    end
   end
 end
 
