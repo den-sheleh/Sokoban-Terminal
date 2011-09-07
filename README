@@ -2,3 +2,5 @@
 
 Implementatation game 'Sokoban' in terminal mode
 
+Command for run game: ruby -I lib bin/sokoban
+
