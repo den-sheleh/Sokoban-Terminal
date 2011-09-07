@@ -1,8 +1,12 @@
 require_relative 'man'
 require_relative 'crate'
+require "highline/system_extensions"
+
 
 module Sokoban
   class Game
+    include HighLine::SystemExtensions
+
     def initialize(level)
       self.level = level
       run
@@ -22,7 +26,7 @@ module Sokoban
     def start
       display_frame
 
-      while key = getch
+      while key = get_character.chr
         case key
           when 'A' #up key
             @man_object.move(:up);
