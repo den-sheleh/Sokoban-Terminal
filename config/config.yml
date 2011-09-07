@@ -1,0 +1,13 @@
+elements:
+  man: @
+  crate: o
+  wall: '#'
+  storage: .
+  crate_on_storage: *
+  man_on_storage: +
+  empty: ' '
+
+game:
+  levels_source: sokoban_levels.txt
+  levels_count: 51
+

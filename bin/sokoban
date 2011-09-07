@@ -1,0 +1,4 @@
+require "sokoban/runner"
+
+Sokoban::Runner.new(ARGV)
+
